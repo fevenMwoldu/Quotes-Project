@@ -1,5 +1,7 @@
 # QuoteProject
 
+A website that recieves Quotes with their author and by whom it is submitted.The submitted quotes will be added into a row and can also be deleted from the row if they are unneeded.The added quotes can be liked and be given an upvote or they can be disliked and can be given a down vote.The number of upvote and down vote will then be counted.
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.1.1.
 
 ## Development server
@@ -25,3 +27,22 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+@project Quote
+
+@author Feven M Weldu <feven.m.weldu@gmail.com>
+
+@description
+
+
+
+@project setup instructions
+
+
+@link to live site on GitHub Pages
+
+
+@copyright and license information
+
+2019 @ Feven M Woldu
+GPL v2.0
