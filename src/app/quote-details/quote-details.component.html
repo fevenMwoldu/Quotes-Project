@@ -1,3 +1,30 @@
-<p>
-  quote-details works!
-</p>
+<div *ngIf="quote">
+    <div class="form-group">
+        <span>Quote:</span><br>
+        <span>{{quote.description}}</span>
+    </div>
+
+    <div class="form-group">
+        <span>Author:</span>
+        <span>{{quote.author}}</span>
+    </div>
+
+    <div class="form-group">
+        <span>Submitted By:</span>
+        <span>{{quote.submittedBy}}</span>
+    </div>
+
+    <div class="form-group">
+        <span>Up Votes:</span>
+        <span>{{quote.upVotes}}</span>
+    </div>
+
+    <div class="form-group">
+        <span>Down Votes:</span>
+        <span>{{quote.downVotes}}</span>
+    </div>
+
+    <div class="form-group">
+        <button type="submit" class="btn btn-success">Return</button>
+    </div>
+</div>

@@ -1,46 +1,23 @@
-
-
-<div class="container">
-  <h1>Quotes</h1>
-  <form>
+<div>
     <div class="form-group">
-      <label for="quote">Quote</label>
-      <input type="text" class="form-control" id="quote"  required>
+        <label for="quote">Quote</label>
+        <input [(ngModel)]="quote.description" class="form-control">
     </div>
 
     <div class="form-group">
-      <label for="author">Author</label>
-      <input type="text" class="form-control" id="author" required>
+        <label for="author">Author</label>
+        <input [(ngModel)]="quote.author" class="form-control">
     </div>
 
     <div class="form-group">
-      <label for="Submitterd_by">Submitted By</label>
-      <input type="text" class="form-control" id="submittedBy" required><br>
+        <label for="Submitterd_by">Submitted By</label>
+        <input [(ngModel)]="quote.submittedBy" class="form-control"><br>
     </div>
 
-   <div class="form-group">
-      <button type="submit" class="btn btn-success">Add Quote</button>
-   </div>
-   <div class="form-group">
-     
-      <button type="submit" class="btn btn-success">Delete Quote</button><br><br>
-  </div>
-
-  <div>
-
-    <table class="table">
-      <thead>
-        <tr>
-          <th></th>
-          <th></th>
-          <th></th>
-        </tr>
-      </thead>
-    </table>
-  </div>
-      </form>
-
-     
+    <div class="form-group">
+        <button type="submit" class="btn btn-success" (click)="addQuote()" [disabled]="addQuoteButtonStatus">Add Quote</button>
     </div>
-
-
+    <div class="form-group">
+        <button type="submit" class="btn btn-success" (click)="onReset()">Reset</button><br><br>
+    </div>
+</div>

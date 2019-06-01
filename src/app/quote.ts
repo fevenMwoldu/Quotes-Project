@@ -1,7 +1,9 @@
 export class Quote {
-    public description:string;
-    public author:string; 
-    public submittedBy:string ;
-    public upvote:string;
-    public downvote:string;
+    constructor(
+        public description:string,
+        public author:string,
+        public submittedBy:string,
+        public upVotes:number = 0,
+        public downVotes:number = 0)
+        {}
 }

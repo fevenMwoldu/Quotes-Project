@@ -1,3 +1,31 @@
-<p>
-  quotes works!
-</p>
+<div class="container">
+    <h1>Quotes</h1>
+
+    <button type="button" class="btn btn-success">Add Quote</button>
+
+    <div>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Quote</th>
+                    <th>Author</th>
+                    <th>Up Votes</th>
+                    <th>Down Votes</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let quote of quotes">
+                    <td>{{quote.description}}</td>
+                    <td>{{quote.author}}</td>
+                    <td>{{quote.upVotes}}</td>
+                    <td>{{quote.downVotes}}</td>
+                    <td><button type="button" class="btn btn-success" (click)="onSelect(quote)">View</button></td>
+                    <td><button type="button" class="btn btn-success" (click)="onSelect(quote)">Edit</button></td>
+                    <td><button type="button" class="btn btn-success" (click)="onDelete(quote)">Delete</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <app-quote-details [quote]="quote"></app-quote-details>
+</div>
