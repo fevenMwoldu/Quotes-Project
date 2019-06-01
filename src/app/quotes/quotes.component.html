@@ -22,10 +22,12 @@
                     <td><button type="button" class="btn btn-success" (click)="onSelect(quote)">View</button></td>
                     <td><button type="button" class="btn btn-success" (click)="onSelect(quote)">Edit</button></td>
                     <td><button type="button" class="btn btn-success" (click)="onDelete(quote)">Delete</button></td>
+                    <td><button type="button" class="btn btn-success" (click)="incrementUpVotes(quote)">Like</button></td>
+                    <td><button type="button" class="btn btn-success" (click)="incrementDownVotes(quote)">Dislike</button></td>
                 </tr>
             </tbody>
         </table>
     </div>
 
-    <app-quote-details [quote]="quote"></app-quote-details>
+    <app-quote-details [quote]="selectedQuote"></app-quote-details>
 </div>

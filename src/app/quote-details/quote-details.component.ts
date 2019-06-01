@@ -8,7 +8,8 @@ import { Quote } from '@angular/compiler';
 })
 export class QuoteDetailsComponent implements OnInit {
 
-  @Input() quote: Quote;
+  @Input() 
+  quote: Quote;
 
   constructor() { }
 

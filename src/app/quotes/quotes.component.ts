@@ -19,6 +19,21 @@ export class QuotesComponent implements OnInit {
       this.quotes.splice(index, 1);      
     }
   }  
+  incrementUpVotes(quote:Quote):void{
+    
+    var count=quote.upVotes;
+    var sum=count+1;
+    quote.upVotes=sum;
+
+  }
+
+  incrementDownVotes(quote:Quote):void{
+
+    var count=quote.downVotes;
+    var sum=count+1;
+    quote.downVotes=sum;
+    
+  }
 
   quotes: Quote[] = [
     { 
