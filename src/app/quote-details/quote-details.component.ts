@@ -16,4 +16,8 @@ export class QuoteDetailsComponent implements OnInit {
   ngOnInit() {
   }
 
+  hideDetail(){
+    this.quote = null;
+  }
+
 }
