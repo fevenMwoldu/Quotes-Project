@@ -4,6 +4,10 @@ export class Quote {
         public author:string,
         public submittedBy:string,
         public upVotes:number = 0,
-        public downVotes:number = 0)
-        {}
+        public downVotes:number = 0,
+        readonly createdOn: Date = new Date()
+        )
+        {
+
+        }
 }

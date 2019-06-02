@@ -13,19 +13,25 @@
                 <tr>
                     <th>Quote</th>
                     <th>Author</th>
-                    <th>Up Votes</th>
-                    <th>Down Votes</th>
+                    <th>Age (Days)</th>
+                    <th><i class="fas fa-thumbs-up"></i></th>
+                    <th><i class="fas fa-thumbs-down"></i></th>
                 </tr>
             </thead>
             <tbody>
                 <tr *ngFor="let quote of quotes">
                     <td>{{quote.description}}</td>
                     <td>{{quote.author}}</td>
-                    <td appHighlight>{{quote.upVotes}}</td>
+                    <td>{{quote.createdOn | dateCount}}</td>
+
+                    <td><span [appHighlight]="quote.upVotes === maxUpVotes">{{quote.upVotes}}</span></td>
+
                     <td>{{quote.downVotes}}</td>
-                    <td><button type="button" class="btn btn-success" (click)="onSelect(quote)">View</button></td>
-                    <td><button type="button" class="btn btn-success" (click)="onSelect(quote)">Edit</button></td>
-                    <td><button type="button" class="btn btn-success" (click)="onDelete(quote)">Delete</button></td>
+
+
+                    <td><button type="button" class="btn btn-success" (click)="onSelect(quote)"><i class="fas fa-info-circle"></i></button></td>
+                    <td><button type="button" class="btn btn-success" (click)="onSelect(quote)"><i class="far fa-edit"></i></button></td>
+                    <td><button type="button" class="btn btn-success" (click)="onDelete(quote)"><i class="fas fa-trash"></i></button></td>
                     <td><button type="button" class="btn btn-success" (click)="incrementUpVotes(quote)"><i class="fas fa-thumbs-up"></i></button></td>
                     <td><button type="button" class="btn btn-success" (click)="incrementDownVotes(quote)"><i class="fas fa-thumbs-down"></i></button></td>
 
