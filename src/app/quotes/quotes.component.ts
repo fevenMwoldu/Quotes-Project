@@ -14,6 +14,22 @@ export class QuotesComponent implements OnInit {
   selectedQuote: Quote;
   maxUpVotes = 0
 
+  addQuoteStatus: boolean = false;
+
+  quote: Quote = {
+    description: '',
+    author: '',
+    submittedBy: '',
+    upVotes: 0,
+    downVotes: 0,
+    createdOn: new Date()
+  };
+
+  onEdit(quote: Quote){
+    this.quote = quote;
+    this.addQuoteStatus = true;
+  }
+
   onSelect(quote: Quote): void {
     this.selectedQuote = quote;
   }

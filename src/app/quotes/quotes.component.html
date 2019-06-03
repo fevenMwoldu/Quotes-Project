@@ -3,7 +3,7 @@
 
     <app-quote-details [quote]="selectedQuote"></app-quote-details>
 
-    <app-quote-form (quoteAdded)="onQuoteAdded($event)"></app-quote-form>
+    <app-quote-form [addQuoteStatus]="addQuoteStatus" [quote]="quote" (quoteAdded)="onQuoteAdded($event)"></app-quote-form>
 
     <div>
         <table class="table">
@@ -42,9 +42,9 @@
                     </td>
 
                     <td>
-                        <div class="nowrap btn-actions">
+                        <div class="nowrap">
                             <button type="button" class="btn btn-success" (click)="onSelect(quote)"><i class="fas fa-info-circle"></i></button>
-                            <button type="button" class="btn btn-success" (click)="onSelect(quote)"><i class="far fa-edit"></i></button>
+                            <button type="button" class="btn btn-success" (click)="onEdit(quote)"><i class="far fa-edit"></i></button>
                             <button type="button" class="btn btn-success" (click)="onDelete(quote)"><i class="fas fa-trash"></i></button>
                         </div>
                     </td>
