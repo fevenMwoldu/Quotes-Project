@@ -15,6 +15,6 @@ export class HighlightDirective implements OnInit {
    }
 
    ngOnInit(): void {
-    this.elem.nativeElement.style.backgroundColor= this.highlight === true ? 'yellow' : this.defaultColor;
+    this.elem.nativeElement.style.backgroundColor = this.highlight === true ? 'green' : this.defaultColor;
   }
 }

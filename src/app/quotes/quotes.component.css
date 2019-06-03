@@ -1,0 +1,7 @@
+.nowrap {
+    white-space: nowrap;
+}
+
+button+button {
+    margin-left: 2px;
+}
