@@ -5,51 +5,33 @@
 
     <app-quote-form [addQuoteStatus]="addQuoteStatus" [quote]="quote" (quoteAdded)="onQuoteAdded($event)"></app-quote-form>
 
-    <div>
-        <table class="table">
-            <thead>
-                <tr>
-                    <th>Quote</th>
-                    <th>Author</th>
-                    <th>Days</th>
-                    <th><i class="fas fa-thumbs-up"></i></th>
-                    <th><i class="fas fa-thumbs-down"></i></th>
-                    <th>Actions</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr *ngFor="let quote of quotes">
-                    <td>{{quote.description}}</td>
-                    <td>{{quote.author}}</td>
-                    <td>{{quote.createdOn | dateCount}}</td>
-
-                    <td>
-                        <button type="button" class="btn btn-success" (click)="incrementUpVotes(quote)" [appHighlight]="quote.upVotes === maxUpVotes">
-                        <div class="nowrap">
-                            <span >{{quote.upVotes}} </span> 
-                            <i class="fas fa-thumbs-up"></i>
-                        </div>
-                    </button>
-                    </td>
-
-                    <td>
-                        <button type="button" class="btn btn-success" (click)="incrementDownVotes(quote)">
+    <div class="card-columns">
+        <div class="card bg-light mb-3" *ngFor="let quote of quotes">
+            <div class="card-body">
+                <p class="card-text">{{quote.description}}</p>
+                <footer class="blockquote-footer">
+                    <small>
+                            {{quote.author}}
+                        </small>
+                </footer>
+            </div>
+            <div class="card-footer text-muted">
+                <button type="button" class="btn btn-success" (click)="incrementUpVotes(quote)" [appHighlight]="quote.upVotes === maxUpVotes">
                             <div class="nowrap">
-                                <span>{{quote.downVotes}} </span> 
-                                <i class="fas fa-thumbs-down"></i>
+                                <span >{{quote.upVotes}} </span> 
+                                <i class="fas fa-thumbs-up"></i>
                             </div>
                         </button>
-                    </td>
-
-                    <td>
-                        <div class="nowrap">
-                            <button type="button" class="btn btn-success" (click)="onSelect(quote)"><i class="fas fa-info-circle"></i></button>
-                            <button type="button" class="btn btn-success" (click)="onEdit(quote)"><i class="far fa-edit"></i></button>
-                            <button type="button" class="btn btn-success" (click)="onDelete(quote)"><i class="fas fa-trash"></i></button>
-                        </div>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
+                <button type="button" class="btn btn-success" (click)="incrementDownVotes(quote)">
+                                <div class="nowrap">
+                                    <span>{{quote.downVotes}} </span> 
+                                    <i class="fas fa-thumbs-down"></i>
+                                </div>
+                            </button>
+                <button type="button" class="btn btn-success" (click)="onSelect(quote)"><i class="fas fa-info-circle"></i></button>
+                <button type="button" class="btn btn-success" (click)="onEdit(quote)"><i class="far fa-edit"></i></button>
+                <button type="button" class="btn btn-success" (click)="onDelete(quote)"><i class="fas fa-trash"></i></button>
+            </div>
+        </div>
     </div>
 </div>
