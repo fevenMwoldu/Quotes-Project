@@ -1,13 +1,9 @@
-<head>
-
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
-</head>
 <div class="container">
     <h1>Quotes</h1>
 
-    <button type="button" class="btn btn-success">Add Quote</button>
-
     <app-quote-details [quote]="selectedQuote"></app-quote-details>
+
+    <app-quote-form (quoteAdded)="onQuoteAdded($event)"></app-quote-form>
 
     <div>
         <table class="table">
@@ -15,9 +11,10 @@
                 <tr>
                     <th>Quote</th>
                     <th>Author</th>
-                    <th>Age (Days)</th>
+                    <th>Days</th>
                     <th><i class="fas fa-thumbs-up"></i></th>
                     <th><i class="fas fa-thumbs-down"></i></th>
+                    <th colspan="5">Actions</th>
                 </tr>
             </thead>
             <tbody>

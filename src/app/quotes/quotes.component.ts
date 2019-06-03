@@ -20,6 +20,7 @@ export class QuotesComponent implements OnInit {
       this.quotes.splice(index, 1);      
     }
   }  
+  
   incrementUpVotes(quote:Quote):void{
     quote.upVotes += 1;
     if(quote.upVotes > this.maxUpVotes){
@@ -35,6 +36,10 @@ export class QuotesComponent implements OnInit {
     let start: Date = new Date(2000, 1, 1);
     let end: Date = new Date();
     return new Date(start.getTime() + Math.random() * (end.getTime() - start.getTime()));
+  }
+
+  onQuoteAdded(quote: Quote){
+    this.quotes.push(quote);
   }
   
   quotes: Quote[] = [
